@@ -1,0 +1,509 @@
+:root {
+    --primary-color: #e33aaa; /* Tu morado/rosado original */
+    --bg-light: #f8fafc;
+    --text-dark: #1e293b;
+    --text-gray: #64748b;
+    --danger: #ef4444;
+    --success: #22c55e;
+}
+
+/* Estilos Globales */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* =========================================
+   SECCIÓN LOGIN (Mantenido tu diseño)
+   ========================================= */
+.login-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.login-info-side {
+    flex: 1;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+
+.logo-icon {
+    background: white;
+    color: var(--primary-color);
+    border-radius: 8px;
+    padding: 2px 8px;
+}
+
+.info-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.description {
+    opacity: 0.8;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.login-form-side {
+    flex: 1;
+    background-color: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.login-subtitle {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+/* Input Fijo */
+.user-fixed {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.user-fixed label, .password-game-section label {
+    display: block;
+    color: var(--text-gray);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.fixed-input {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f1f5f9;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* Juego de Emojis */
+.emoji-slots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.slot {
+    width: 50px;
+    height: 50px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: #fff;
+}
+
+.emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas para los 20 emojis */
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.emoji-btn {
+    font-size: 1.4rem;
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.emoji-btn:hover:not(:disabled) {
+    background: #f1f5f9;
+    transform: scale(1.1);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: opacity 0.2s;
+}
+
+.btn-login:hover {
+    opacity: 0.9;
+}
+
+.reset-link {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* =========================================
+   SECCIÓN DASHBOARD (Nuevos Estilos)
+   ========================================= */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.dash-header h1 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.header-btns {
+    display: flex;
+    gap: 12px;
+}
+
+/* Botón de Pánico */
+.panic-btn {
+    background: var(--danger);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.panic-btn.active {
+    background: var(--success);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.logout-btn {
+    background: var(--text-gray);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* Tabla de Contraseñas */
+.btn-new {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.pass-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pass-table th {
+    background: #f8fafc;
+    padding: 18px;
+    text-align: left;
+    color: var(--text-gray);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pass-table td {
+    padding: 18px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.bold {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.badge {
+    background: #fdf2f8;
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Botones de acción */
+.btn-edit, .btn-delete {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: transform 0.2s;
+}
+
+.btn-edit:hover { transform: scale(1.2); }
+.btn-delete:hover { transform: scale(1.2); }
+
+/* Formulario del Dashboard (Igual que la card de login) */
+.pass-form {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.form-grid input, .form-grid textarea {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-grid textarea {
+    grid-column: span 2;
+    height: 80px;
+    resize: none;
+}
+
+.form-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-save {
+    flex: 2;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    flex: 1;
+    background: #f1f5f9;
+    color: var(--text-gray);
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.loader {
+    text-align: center;
+    padding: 40px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN CORREGIDO
+   ========================================= */
+
+/* Tablets y Laptops pequeñas */
+@media (max-width: 1024px) {
+    .login-info-side {
+        padding: 40px;
+    }
+    .info-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Celulares (Ajuste para ver todo el texto rosado) */
+@media (max-width: 768px) {
+    
+    .login-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .login-info-side {
+        padding: 50px 30px; /* Más espacio para que el texto respire */
+        text-align: center;
+        align-items: center;
+        flex: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .brand {
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+
+    /* Reducimos el tamaño para que quepa todo el texto en la pantalla */
+    .info-content h1 {
+        font-size: 2.2rem; 
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        display: block; /* AHORA SÍ SE VE EL TEXTO */
+        font-size: 0.95rem;
+        opacity: 0.9;
+        max-width: 100%;
+        line-height: 1.4;
+    }
+
+    .login-form-side {
+        padding: 30px 15px;
+        background-color: var(--bg-light);
+    }
+
+    .login-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+        max-width: 100%;
+    }
+
+    /* Ajuste de Emojis para móvil */
+    .emoji-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+    }
+
+    .emoji-btn {
+        padding: 10px 5px;
+        font-size: 1.2rem;
+    }
+
+    /* Dashboard Header */
+    .dash-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .header-btns {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    /* Tabla y Formulario Dashboard */
+    .table-responsive {
+        margin: 0 -10px;
+        overflow-x: auto; 
+    }
+
+    .pass-table {
+        min-width: 600px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid textarea {
+        grid-column: span 1;
+    }
+}
+
+/* Pantallas muy pequeñas (Ajuste fino) */
+@media (max-width: 380px) {
+    .info-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .description {
+        font-size: 0.85rem;
+    }
+
+    .emoji-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .slot {
+        width: 40px;
+        height: 40px;
+    }
+}
