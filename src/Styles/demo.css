@@ -1,0 +1,540 @@
+/*
+|--------------------------------------------------------------------------
+| CONFIGURACIÓN BASE Y VARIABLES
+|--------------------------------------------------------------------------
+*/
+
+:root {
+    /* Colores de Fondo */
+    --color-darkblue: #1a3a60;    
+    --color-lightgreen: #856f5b;  
+    --color-tan: #728c9b;         
+    --color-lightblue: #728c9b;   
+    --color-darkgreen: #113637;   
+    --color-red: #5d0f19;         
+    --color-orange: #55544f;      
+    
+    /* Variables para el Indicador Central */
+    --indicator-size: 250px;
+    --dot-offset: 125px;
+    --dot-size: 25px;
+    --border-size: 2px;
+    --dot-scale-factor: 1.5;
+
+    /* Distancia orbital: Radio - Mitad del dot + offset visual */
+    --dot-orbit-distance: calc(var(--dot-offset) - (var(--dot-size) / 2) + 10px);
+    
+    /* Colores de Texto */
+    --text-color-light: white;
+    --text-color-dark: #333; 
+    --text-color-accent: #e7367c; 
+    --gold-color: #c9a84c;
+
+    /* Título fijo */
+    --title-fixed-color: white; 
+    --title-fixed-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/*
+|--------------------------------------------------------------------------
+| RESET Y BASE
+|--------------------------------------------------------------------------
+*/
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+    height: 100%;
+    scroll-snap-type: y mandatory;
+}
+
+/*
+|--------------------------------------------------------------------------
+| ESTRUCTURA PRINCIPAL
+|--------------------------------------------------------------------------
+*/
+
+.how-it-works-page {
+    position: relative;
+    width: 100%;
+    min-height: 500vh; /* 5 pasos × 100vh */
+}
+
+.steps-container {
+    padding: 0;
+}
+
+.step-section {
+    height: 100vh;
+    display: flex;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+/* Colores de fondo */
+.color-darkblue  { background-color: var(--color-darkblue); }
+.color-lightgreen{ background-color: var(--color-lightgreen); }
+.color-tan       { background-color: var(--color-tan); }
+.color-lightblue { background-color: var(--color-lightblue); }
+.color-darkgreen { background-color: var(--color-darkgreen); }
+.color-red       { background-color: var(--color-red); }
+.color-orange    { background-color: var(--color-orange); }
+
+/*
+|--------------------------------------------------------------------------
+| CONTENIDO INTERNO: 50 / 50
+|--------------------------------------------------------------------------
+*/
+
+.step-content-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.step-half {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+}
+
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+
+/* --- Lado IMAGEN --- */
+.step-image-side {
+    position: relative;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.step-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Efecto glass sobre imagen (energy-glass del Demo 1) */
+.energy-glass {
+    filter: brightness(0.88) saturate(1.1);
+}
+
+/* --- Lado TEXTO --- */
+.step-text-side {
+    flex-direction: column;
+    padding: 0 30px;
+    z-index: 10;
+}
+
+.step-text-details {
+    max-width: 350px;
+    padding: 40px 0;
+    text-align: left;
+}
+
+/* Tag dorado encima del título (EL IMPERATIVO, NUESTRA BRÚJULA…) */
+.step-tag {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: var(--gold-color);
+}
+
+.gold-text {
+    color: var(--gold-color);
+}
+
+/* Título del paso */
+.step-small-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: inherit;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.25;
+}
+
+/* Descripción */
+.step-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    opacity: 0.88;
+}
+
+/* Línea decorativa al pie */
+.step-footer-line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--gold-color);
+    border-radius: 2px;
+    opacity: 0.6;
+}
+
+/*
+|--------------------------------------------------------------------------
+| LÓGICA DE COLOR DE TEXTO
+|--------------------------------------------------------------------------
+*/
+
+.color-darkblue .step-text-side,
+.color-darkgreen .step-text-side,
+.color-red .step-text-side,
+.color-orange .step-text-side {
+    color: var(--text-color-light);
+}
+
+.color-lightgreen .step-text-side,
+.color-tan .step-text-side,
+.color-lightblue .step-text-side {
+    color: var(--text-color-dark);
+}
+
+.color-lightgreen .step-description,
+.color-tan .step-description,
+.color-lightblue .step-description {
+    color: var(--text-color-dark);
+    opacity: 0.7;
+}
+
+/* Ajuste del gold-text sobre fondos claros */
+.color-lightgreen .step-tag,
+.color-tan .step-tag,
+.color-lightblue .step-tag {
+    color: #a07830;
+}
+
+.color-lightgreen .step-footer-line,
+.color-tan .step-footer-line,
+.color-lightblue .step-footer-line {
+    background-color: #a07830;
+}
+
+/* Alineación pasos impares */
+.step-section:nth-child(odd) .step-text-side {
+    justify-content: center;
+    align-items: center;
+}
+.step-section:nth-child(odd) .step-text-side .step-text-details {
+    margin: 0;
+}
+
+/* Alineación pasos pares */
+.step-section:nth-child(even) .step-text-side {
+    justify-content: center;
+    align-items: center;
+}
+.step-section:nth-child(even) .step-text-side .step-text-details {
+    margin: 0;
+}
+
+/*
+|--------------------------------------------------------------------------
+| INDICADOR FIJO CENTRAL (HUD de presentación)
+|--------------------------------------------------------------------------
+*/
+
+.fixed-step-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+/* Bloque de cabecera (ATLAS + COMPASS / PRESENTACIÓN ESTRATÉGICA) */
+.presentation-header {
+    position: absolute;
+    top: calc(50% - var(--indicator-size) / 2 - 90px);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 55;
+    pointer-events: none;
+}
+
+.presentation-header .gold-text {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.how-it-works-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--title-fixed-color);
+    text-shadow: var(--title-fixed-shadow);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Círculo central */
+.step-circle-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 60;
+}
+
+.step-number-circle {
+    width: var(--indicator-size);
+    height: var(--indicator-size);
+    border-radius: 50%;
+    border: var(--border-size) solid rgba(255, 255, 255, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: transparent;
+}
+
+.step-number {
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: white;
+    z-index: 70;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+/*
+|--------------------------------------------------------------------------
+| DOTS — 5 PASOS (360° / 5 = 72°)
+|--------------------------------------------------------------------------
+*/
+
+.dot {
+    position: absolute;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out,
+                background-color 0.3s ease-in-out,
+                box-shadow 0.3s ease-in-out;
+
+    /* Centro del punto en el centro del círculo */
+    top:  calc(50% - var(--dot-size) / 2);
+    left: calc(50% - var(--dot-size) / 2);
+
+    transform-origin: center;
+}
+
+.dot-active {
+    background-color: white !important;
+    box-shadow: 0 0 10px 2px rgba(255,255,255,0.7);
+}
+
+/* Posiciones de los 5 dots (72° de separación, empezando en 12 o'clock = 0°) */
+.dot-1 {
+    transform: rotate(0deg) translateY(calc(-1 * var(--dot-orbit-distance)));
+}
+.dot-2 {
+    transform: rotate(72deg) translateY(calc(-1 * var(--dot-orbit-distance)));
+}
+.dot-3 {
+    transform: rotate(144deg) translateY(calc(-1 * var(--dot-orbit-distance)));
+}
+.dot-4 {
+    transform: rotate(216deg) translateY(calc(-1 * var(--dot-orbit-distance)));
+}
+.dot-5 {
+    transform: rotate(288deg) translateY(calc(-1 * var(--dot-orbit-distance)));
+}
+
+/* Estados activos — mantienen rotación + traslación y añaden escala */
+.dot-1.dot-active {
+    transform: rotate(0deg)
+               translateY(calc(-1 * var(--dot-orbit-distance)))
+               scale(var(--dot-scale-factor)) !important;
+}
+.dot-2.dot-active {
+    transform: rotate(72deg)
+               translateY(calc(-1 * var(--dot-orbit-distance)))
+               scale(var(--dot-scale-factor)) !important;
+}
+.dot-3.dot-active {
+    transform: rotate(144deg)
+               translateY(calc(-1 * var(--dot-orbit-distance)))
+               scale(var(--dot-scale-factor)) !important;
+}
+.dot-4.dot-active {
+    transform: rotate(216deg)
+               translateY(calc(-1 * var(--dot-orbit-distance)))
+               scale(var(--dot-scale-factor)) !important;
+}
+.dot-5.dot-active {
+    transform: rotate(288deg)
+               translateY(calc(-1 * var(--dot-orbit-distance)))
+               scale(var(--dot-scale-factor)) !important;
+}
+
+/*
+|--------------------------------------------------------------------------
+| RESPONSIVE — TABLETS (max-width: 1024px)
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 1024px) {
+    :root {
+        --indicator-size: 200px;
+        --dot-offset: 100px;
+        --dot-size: 20px;
+        --dot-scale-factor: 1.4;
+        --dot-orbit-distance: calc(var(--dot-offset) - (var(--dot-size) / 2) + 8px);
+    }
+
+    .step-text-details {
+        max-width: 300px;
+        padding: 30px 0;
+    }
+
+    .step-small-title {
+        font-size: 1.2rem;
+    }
+
+    .step-description {
+        font-size: 1rem;
+    }
+
+    .how-it-works-title {
+        font-size: 1.3rem;
+        letter-spacing: 4px;
+    }
+
+    .presentation-header {
+        top: calc(50% - var(--indicator-size) / 2 - 70px);
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| RESPONSIVE — SMARTPHONES (max-width: 767px)
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 767px) {
+
+    body {
+        scroll-snap-type: none !important;
+    }
+
+    .how-it-works-page {
+        min-height: auto !important;
+    }
+
+    /* Ocultar HUD fijo */
+    .fixed-step-indicator {
+        display: none !important;
+    }
+
+    /* Cada step se apila verticalmente */
+    .step-section {
+        height: auto !important;
+        min-height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        scroll-snap-align: none !important;
+    }
+
+    .step-content-container {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Texto arriba */
+    .step-half.step-text-side {
+        order: 1 !important;
+        width: 100% !important;
+        flex: unset !important;
+        padding: 40px 24px !important;
+        height: auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .step-text-details {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Imagen abajo */
+    .step-half.step-image-side {
+        order: 2 !important;
+        width: 100% !important;
+        flex: unset !important;
+        height: auto !important;
+        min-height: 260px !important;
+        max-height: 380px !important;
+        overflow: hidden !important;
+    }
+
+    .image-wrapper {
+        height: 100% !important;
+        min-height: 260px !important;
+    }
+
+    .step-image {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 260px !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    /* Tipografía móvil */
+    .step-tag {
+        font-size: 0.68rem;
+        letter-spacing: 3px;
+    }
+
+    .step-small-title {
+        font-size: 1.25rem !important;
+    }
+
+    .step-description {
+        font-size: 0.95rem !important;
+        margin-bottom: 20px !important;
+    }
+}
