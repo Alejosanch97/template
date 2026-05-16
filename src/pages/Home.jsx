@@ -758,58 +758,6 @@ export const Home = () => {
             {/* ==========================================
     SECCIÓN 4: VIABILIDAD INSTITUCIONAL Y MEJORA CONTINUA
     ========================================== */}
-            <section id="atlas-sostener-viabilidad" className="atlas-audit-block">
-                <div className="atlas-section-header">
-                    <span className="atlas-gold-tag">FASE 4: SOSTENER - ESCALABILIDAD Y FUTURO</span>
-                    <h2 className="atlas-main-title">Estrategia Financiera y Optimización de la Plataforma</h2>
-                </div>
-
-                <div className="atlas-grid-layout atlas-grid-2col">
-                    {/* Card Izquierda: Monetización y Disposición de Pago */}
-                    <div className="atlas-card-unique atlas-glass-strong">
-                        <h3>Disposición a Invertir y Viabilidad de Mercado (B2B)</h3>
-                        <p className="atlas-p">
-                            Existe una clara bifurcación en la percepción del valor monetario de la certificación. Mientras los docentes proponen micro-inversiones individuales (entre 50,000 y 500,000 COP) por la falta de referencias en el mercado, <strong>el estamento directivo demuestra una visión corporativa de licenciamiento institucional (B2B)</strong>.
-                        </p>
-                        <div className="atlas-table-responsive" style={{ marginTop: '15px' }}>
-                            <table className="atlas-market-table">
-                                <thead>
-                                    <tr>
-                                        <th>Líder Directivo</th>
-                                        <th>Rango de Inversión Declarado por Institución / Facultad</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td><strong>Chloé Dupuis</strong></td><td><span className="price-tag gold">$2.000 – $5.000 USD</span></td></tr>
-                                    <tr><td><strong>Robin Davies</strong></td><td><span className="price-tag silver">Menos de $2.000 USD</span></td></tr>
-                                    <tr><td><strong>Andrea Ramírez</strong></td><td><span className="price-tag silver">Menos de $2.000 USD</span></td></tr>
-                                    <tr><td><strong>Kelley Crites</strong></td><td><span className="price-tag silver">Menos de $2.000 USD</span></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <p className="atlas-p" style={{ fontSize: '0.85rem', color: '#888', marginTop: '10px' }}>
-                            * Conclusión Estratégica: El modelo de negocio debe apuntar a la venta corporativa por departamentos o facultades, apalancando el presupuesto central directivo.
-                        </p>
-                    </div>
-
-                    {/* Card Derecha: Feedback UX y Optimización */}
-                    <div className="atlas-card-unique atlas-glass-strong">
-                        <h3>Oportunidades de Mejora Levantadas por el Grupo Focal</h3>
-                        <p className="atlas-p">
-                            La experiencia de usuario en la plataforma cerró con una excelente calificación promedio de <strong>4.27 / 5</strong>. Sin embargo, el análisis cualitativo de la fase Sostener detectó tres puntos de optimización urgentes para robustecer el ecosistema:
-                        </p>
-
-                        <ul className="atlas-bullet-list" style={{ marginTop: '15px' }}>
-                            <li>
-                                <strong>Balanceo de Carga Temporal:</strong> Ajustar la extensión de las etapas. Profesores indicaron que la densidad interfirió con semanas de alta carga académica o recesos. La recomendación colectiva del 63.6% fija el tiempo ideal del programa entre <strong>4 a 6 meses</strong>.
-                            </li>
-                            <li>
-                                <strong>Flexibilización de Criterios por Contexto:</strong> Docentes sugirieron no penalizar a usuarios que integran IA solo en la fase de <em>Planeación</em>, permitiendo que la plataforma no exija obligatoriamente métricas de <em>Evaluación</em> o <em>Implementación</em> si el diseño curricular no lo requiere.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
 
 
 
