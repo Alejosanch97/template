@@ -163,7 +163,7 @@ export const Home = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, ease: "easeOut" }}
                     >
-                        <span className="hero-kicker font-body">AI GOVERNANCE FRAMEWORK</span>
+                        <span className="hero-kicker font-body">IA Responsable en educación</span>
 
                         {/* 2. REEMPLAZO DEL H1 POR EL LOGO */}
                         <div className="hero-logo-container">
@@ -176,9 +176,9 @@ export const Home = () => {
 
                         {/* 3. PÁRRAFO CON CLASE DE JUSTIFICADO */}
                         <p className="hero-description font-body text-justified">
-                            No es solo tecnología; es <strong>visión institucional</strong>.
-                            Navegue la complejidad de la Inteligencia Artificial con un marco
-                            estratégico diseñado para la excelencia académica y la ética digital.
+                            El futuro de la IA en educación no depende de las herramientas, sino de las decisiones.
+                            <strong>COMPASS</strong> ayuda a las instituciones a transformar el uso de IA en una
+                            práctica ética, estratégica y sostenible tanto a docentes como a directivos.
                         </p>
                     </motion.div>
 
@@ -204,50 +204,6 @@ export const Home = () => {
             </section>
 
             {/* --- SECCIÓN 1: COMPASS & FILOSOFÍA (Párrafos 1 y 2) --- */}
-            <section id="about" className="ecosystem-detailed">
-                <div className="content-container">
-                    <div className="info-grid">
-                        <div className="text-block">
-                            {/* Párrafo 1: El Imperativo */}
-                            <h2 className="section-title font-heading italic">COMPASS: Responsabilidad Institucional</h2>
-                            <p className="highlight-text gold-text">
-                                Transformando la adopción improvisada en una visión compartida.
-                            </p>
-                            <p className="body-text">
-                                En el ecosistema educativo actual, no basta con saber usar la tecnología; es imperativo <strong>gobernarla</strong>.
-                                COMPASS aporta coherencia y propósito, permitiendo distinguir entre una IA que automatiza tareas y una que realmente potencia el desarrollo cognitivo bajo estándares de ética y transparencia.
-                            </p>
-
-                            {/* Párrafo 2: Filosofía de Navegación */}
-                            <div className="philosophy-content" style={{ marginTop: '40px' }}>
-                                <div className="philosophy-tag energy-glass">
-                                    <span className="gold-text">FILOSOFÍA DE NAVEGACIÓN ÉTICA</span>
-                                </div>
-                                <p className="body-text small" style={{ opacity: 0.8, marginTop: '15px' }}>
-                                    Traducimos marcos globales de la <strong>UNESCO, OCDE y la UE</strong> en un modelo operativo real, evaluando dimensiones críticas como el cumplimiento normativo, la madurez tecnológica, el impacto pedagógico, la supervisión humana y la alineación sistémica.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="cards-list">
-                            <div className="mini-card energy-glass">
-                                <div className="card-glow"></div>
-                                <span className="card-number gold-text">01</span>
-                                <h4>Gobernanza Humana</h4>
-                                <p>La tecnología nunca es el centro; la voluntad humana dicta el rumbo institucional.</p>
-                            </div>
-                            <div className="mini-card energy-glass" style={{ marginTop: '20px' }}>
-                                <div className="card-glow"></div>
-                                <span className="card-number gold-text">02</span>
-                                <h4>Alineación Sistémica</h4>
-                                <p>Cerramos la brecha detectada entre la innovación docente y la regulación.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* --- SECCIÓN 1: COMPASS & FILOSOFÍA (Párrafos 1 y 2) --- */}
             {/* --- SECCIÓN 1: COMPASS (Párrafos 1 y 2) --- */}
             <section id="about" className="ecosystem-detailed">
                 <div className="content-container">
@@ -258,7 +214,7 @@ export const Home = () => {
                                 "Transformar la adopción improvisada en una responsabilidad compartida."
                             </p>
                             <p className="body-text">
-                                Bienvenidos. Somos COMPASS, una compañía nacida de una necesidad urgente. En el ecosistema educativo actual, no basta con saber usar la tecnología; <strong>es imperativo gobernarla</strong>.  Aportamos coherencia y propósito para distinguir entre una IA que simplemente automatiza tareas y una que potencia el pensamiento crítico y el desarrollo cognitivo bajo estándares de ética y transparencia.
+                                COMPASS es una solución EdTech que nace de una necesidad urgente. En el ecosistema educativo actual, no basta con saber usar la tecnología; es imperativo gobernarla. Aportamos coherencia y propósito para distinguir entre la IA que simplemente automatiza tareas + optimiza tiempos y una que potencia el pensamiento crítico y el desarrollo de habilidades bajo estándares internacionales de ética y responsabilidad.
                             </p>
 
                             {/* FILOSOFÍA CON LOGOS ESTANDARIZADOS */}
@@ -278,7 +234,7 @@ export const Home = () => {
                                 </div>
 
                                 <p className="dimensions-text">
-                                    EVALUAMOS 5 DIMENSIONES: CUMPLIMIENTO NORMATIVO • MADUREZ TECNOLÓGICA • IMPACTO PEDAGÓGICO • SUPERVISIÓN HUMANA • ALINEACIÓN SISTÉMICA.
+                                    Evaluamos 5 dimensiones: Cumplimiento Normativo • Madurez Tecnológica • Impacto Pedagógico • Supervisión Humana • Alineación Sistématica.
                                 </p>
                             </div>
                         </div>
@@ -286,7 +242,7 @@ export const Home = () => {
                         {/* CARDS CON ESPACIADO MEJORADO */}
                         <div className="cards-list-vertical">
                             <div className="mini-card energy-glass-premium">
-                                <span className="card-number gold-text">20.7</span>
+                                <span className="card-number gold-text">01</span>
                                 <h4>Brecha Crítica</h4>
                                 <p>Puntos de diferencia detectados entre la innovación docente y la capacidad de regulación institucional.</p>
                             </div>
@@ -295,6 +251,50 @@ export const Home = () => {
                                 <span className="card-number gold-text">02</span>
                                 <h4>Misión Central</h4>
                                 <p>Que la tecnología nunca sea el centro, sino que la gobernanza humana dicte el rumbo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* --- SECCIÓN 1: COMPASS & FILOSOFÍA (Párrafos 1 y 2) --- */}
+            <section id="about" className="ecosystem-detailed">
+                <div className="content-container">
+                    <div className="info-grid">
+                        <div className="text-block">
+                            {/* Párrafo 1: El Imperativo */}
+                            <h2 className="section-title font-heading italic">COMPASS: Responsabilidad Institucional</h2>
+                            <p className="highlight-text gold-text">
+                                Transformando la adopción improvisada de IA en una visión institucional compartida.
+                            </p>
+                            <p className="body-text">
+                                En los ecosistemas educativos actuales, no basta con incorporar inteligencia artificial; es necesario <strong>gobernarla</strong> con criterio.
+                                COMPASS ayuda a las instituciones a convertir el uso aislado de IA en una estrategia coherente, ética y alineada con el desarrollo académico, la supervisión humana y la toma de decisiones responsables.
+                            </p>
+
+                            {/* Párrafo 2: Filosofía de Navegación */}
+                            <div className="philosophy-content" style={{ marginTop: '40px' }}>
+                                <div className="philosophy-tag energy-glass">
+                                    <span className="gold-text">FILOSOFÍA DE NAVEGACIÓN ÉTICA</span>
+                                </div>
+                                <p className="body-text small" style={{ opacity: 0.8, marginTop: '15px' }}>
+                                    Traducimos marcos globales de la <strong>UNESCO, OCDE y la UE</strong> en un modelo operativo real, evaluando dimensiones críticas como el cumplimiento normativo, la madurez tecnológica, el impacto pedagógico, la supervisión humana y la alineación sistémica.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="cards-list">
+                            <div className="mini-card energy-glass">
+                                <div className="card-glow"></div>
+                                <span className="card-number gold-text">01</span>
+                                <h4>Ruta de Navegación Docente</h4>
+                                <p>Fortalece el uso responsable de IA en planeación, ejecución y evaluación de experiencias de aprendizaje mediante el desarrollo de competencias docentes, supervisión humana, prompting ético y toma de decisiones pedagógicas.</p>
+                            </div>
+                            <div className="mini-card energy-glass" style={{ marginTop: '20px' }}>
+                                <div className="card-glow"></div>
+                                <span className="card-number gold-text">02</span>
+                                <h4>Ruta de Navegación Directiva</h4>
+                                <p>Permite monitorear riesgos, generar políticas abarcando liderazgo institucional y niveles de adopción mediante dashboards, seguimiento pedagógico y gobernanza de IA.</p>
                             </div>
                         </div>
                     </div>
@@ -310,12 +310,8 @@ export const Home = () => {
                         <h2 className="phases-main-title font-heading italic">El Modelo ATLAS: Nuestro Motor Metodológico</h2>
                         <div className="atlas-intro-text">
                             <p className="body-text centered">
-                                Para ejecutar esta visión, nos regimos por una <strong>arquitectura de transformación cultural</strong> diseñada
-                                para navegar esta era sin perder el rigor académico. ATLAS no es una plataforma estática;
-                                es el sistema dinámico que convierte el caos de la innovación individual en una estrategia institucional protegida.
-                            </p>
-                            <p className="highlight-quote gold-text">
-                                "Es el 'cómo' hacemos realidad la promesa de COMPASS: Auditable, Sostenible y Humano."
+                                Para ejecutar esta visión, nos regimos por un modelo de transformación cultural diseñado para navegar esta era sin perder el rigor académico <strong>ATLAS</strong> .
+                                Este modelo tiene 5 etapas secuenciales diferenciadas para los roles docente y directivo. En esta ruta de navegación se impulsa la madurez y desarrollo de habilidades de IA responsable y ética al tiempo que se promueve la innovación individual en una estrategia institucional conjunta y protegida
                             </p>
                         </div>
                     </div>
@@ -323,10 +319,10 @@ export const Home = () => {
                     {/* Párrafo 4: Las 5 Fases Operativas (Mantenemos la cuadrícula que te gusta) */}
                     <div className="phases-grid">
                         {[
-                            { f: "A", n: "Auditar", d: "Entender la realidad del campus y sus riesgos." },
+                            { f: "A", n: "Auditar", d: "Entender la realidad de la institución y el panorama de riesgos éticos y de responsabilidad en el uso de la IA." },
                             { f: "T", n: "Transformar", d: "Rediseño intencional de la pedagogía académica." },
-                            { f: "L", n: "Liderar", d: "Fortalecimiento de la toma de decisiones directiva." },
-                            { f: "A", n: "Asegurar", d: "Certificación de calidad y ética digital." },
+                            { f: "L", n: "Liderar", d: "Empoderamiento de la interacción con la IA refinamiento y toma de decisiones." },
+                            { f: "A", n: "Asegurar", d: "Incorporación de capas de ética y responsabilidad al uso internacional de IA" },
                             { f: "S", n: "Sostener", d: "Cultura de mejora y evolución constante." }
                         ].map((phase, i) => (
                             <motion.div
@@ -352,15 +348,14 @@ export const Home = () => {
 
                         {/* LADO IZQUIERDO: El Escenario */}
                         <div className="focus-text-main">
-                            <span className="gold-text-tag">CASO DE ÉXITO: PILOTO ATLAS</span>
+                            <span className="gold-text-tag">CASO DE ÉXITO: PILOTO COMPASS</span>
                             <h2 className="section-title font-heading italic">
-                                La Facultad de Lenguas: <br />
-                                <span className="white-text">Zona Cero de la Innovación</span>
+                                Departamento de lenguas extranjeras (miembros de los siguientes idiomas: Japonés, Inglés, Francés, Inglés) <br />
                             </h2>
                             <p className="body-text">
-                                La Facultad de Lenguas representa el espacio más sensible para observar el impacto de la IA generativa.
+                                La Facultad de Lenguas representa el espacio más interesante para observar el impacto de la IA generativa.
                                 Desde la traducción contextual hasta la redacción automatizada, es aquí donde la IA altera profundamente
-                                la producción textual y la originalidad académica.
+                                la producción textual y la honestidad académica.
                             </p>
 
                             <div className="institution-highlight energy-glass">
@@ -383,7 +378,7 @@ export const Home = () => {
                             <div className="metric-box energy-glass-premium">
                                 <div className="metric-split">
                                     <div className="metric-item">
-                                        <span className="big-num gold-text">08</span>
+                                        <span className="big-num gold-text">07</span>
                                         <p>Docentes <br /> Investigadores</p>
                                     </div>
                                     <div className="divider-v"></div>
@@ -398,11 +393,10 @@ export const Home = () => {
                             <div className="paradox-card energy-glass-strong">
                                 <h4 className="gold-text">La Paradoja de la Evaluación</h4>
                                 <p>
-                                    Detectamos una contradicción crítica: los docentes comprenden técnicamente los LLM,
-                                    pero continúan evaluando <strong>productos finales</strong> en lugar de <strong>procesos cognitivos</strong>.
+                                    Identificamos una asimetría metodológica: las competencias técnicas de los profesores avanzan con rapidez, mientras que las normativas heredadas continúan ligadas a evidencias tradicionales.
                                 </p>
                                 <div className="warning-note">
-                                    <p>La IA genera textos que aparentan niveles de competencia superiores a la capacidad real del estudiante.</p>
+                                    <p>El uso de herramientas generativas reduce el esfuerzo operativo del alumno, impulsando la necesidad de rediseñar instrumentos que evalúen el control humano del proceso.</p>
                                 </div>
                             </div>
                         </div>
@@ -420,7 +414,7 @@ export const Home = () => {
                     <div id="atlas-block-docentes" className="atlas-audit-block">
                         <div className="atlas-section-header">
                             <span className="atlas-gold-tag">FASE 1: AUDITAR - CUERPO DOCENTE</span>
-                            <h2 className="atlas-main-title">Resultados: Facultad de Lenguas</h2>
+                            <h2 className="atlas-main-title">Resultados: Departamento de lenguas extranjeras</h2>
                         </div>
 
                         <div className="atlas-grid-layout atlas-grid-docentes">
@@ -442,17 +436,13 @@ export const Home = () => {
 
                             <div className="atlas-col-main">
                                 <div className="atlas-card-unique atlas-glass-premium">
-                                    <h3 className="atlas-card-title">La Facultad de Lenguas como Laboratorio de Innovación</h3>
+                                    <h3 className="atlas-card-title">Validación Tecnológica y Curva de Adopción</h3>
                                     <p className="atlas-p">
-                                        Representa la <strong>"zona cero"</strong> del impacto de la IA generativa. Desde traducción contextual hasta redacción automatizada, las lenguas extranjeras son el espacio más sensible para observar cómo la IA altera la producción textual, la originalidad y la evaluación académica.
+                                        El ecosistema inició con una fase de diagnóstico orientada a medir la fricción tecnológica y las expectativas del grupo focal. A partir de esa línea de base, la plataforma evolucionó de manera iterativa hasta consolidar una sólida calificación promedio de <strong>56.4%</strong> en la experiencia de usuario.
                                     </p>
                                     <p className="atlas-p" style={{ marginTop: '15px' }}>
-                                        El piloto ATLAS demuestra que el problema ya no es si los estudiantes usan IA, sino cómo las instituciones <strong>regulan, supervisan y resignifican</strong> pedagógicamente ese uso.
+                                        Este avance demuestra que la infraestructura logró mitigar la resistencia técnica inicial, transformándose en un entorno intuitivo apto para el <strong>despliegue de políticas institucionales</strong> y auditorías en tiempo real.
                                     </p>
-                                    <div className="atlas-paradox-box">
-                                        <h4 className="atlas-gold-sub">La Paradoja de la Evaluación</h4>
-                                        <p className="atlas-p-small">Los docentes entienden técnicamente qué es un LLM, pero continúan evaluando productos finales en lugar de procesos cognitivos. La IA genera textos que aparentan niveles de competencia superiores a la capacidad real del estudiante.</p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -460,15 +450,15 @@ export const Home = () => {
                         {/* Perfiles */}
                         <div className="atlas-profiles-row">
                             <div className="atlas-profile-mini atlas-glass-basic">
-                                <h4 className="atlas-gold-sub">Diana • Pioneer</h4>
+                                <h4 className="atlas-gold-sub">Docente 1 • Pioneer</h4>
                                 <p className="atlas-p-small">Rediseña rúbricas con criterios de uso responsable e integración real.</p>
                             </div>
                             <div className="atlas-profile-mini atlas-glass-basic">
-                                <h4 className="atlas-blue-sub">Ryoko • Integration Leader</h4>
+                                <h4 className="atlas-blue-sub">Docente 2 • Integration Leader</h4>
                                 <p className="atlas-p-small">Utiliza IA para andamiaje cognitivo en comprensión lectora de japonés.</p>
                             </div>
                             <div className="atlas-profile-mini atlas-glass-basic">
-                                <h4 className="atlas-red-sub">Laura • Ethical Resistance</h4>
+                                <h4 className="atlas-red-sub">Docente 3 • Ethical Resistance</h4>
                                 <p className="atlas-p-small">Representa el miedo institucional a la pérdida de habilidades básicas.</p>
                             </div>
                         </div>
@@ -548,7 +538,7 @@ export const Home = () => {
                             <div className="atlas-card-unique atlas-glass-basic">
                                 <h3 className="atlas-card-title">Hallazgos Transversales</h3>
                                 <ul className="atlas-list">
-                                    <li>La facultad superó la ignorancia tecnológica, pero no alcanza la seguridad operativa.</li>
+                                    <li>La facultad superó el desconocimiento tecnológica, pero no alcanza la seguridad operativa.</li>
                                     <li>Existe un <strong>"agujero negro" institucional</strong>: Sin monitoreo de sesgos ni transparencia algorítmica.</li>
                                     <li>El cuerpo docente tiene madurez técnica, pero carece de validación normativa.</li>
                                 </ul>
