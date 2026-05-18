@@ -121,14 +121,22 @@ const marcosData = {
 
 // 3. Datos: Promedios de Madurez Docente (Escala 1 a 5)
 const madurezData = {
-    labels: ['Clevia', 'Karen', 'Marcela', 'Diana', 'Ryoko', 'Hebelyn', 'Laura'],
+    labels: ['Antes del Piloto', 'Después del Piloto'],
     datasets: [
         {
-            label: 'Promedio Global',
-            data: [4.83, 4.42, 4.17, 4.08, 3.71, 3.71, 4.00],
-            backgroundColor: 'rgba(209, 180, 153, 0.5)',
-            borderColor: '#d1b499',
+            label: 'Uso Responsable de IA',
+            // Promedio inicial (3.27) vs Promedio final tras el piloto (4.36)
+            data: [3.27, 4.36], 
+            backgroundColor: [
+                'rgba(255, 255, 255, 0.1)',  // Barra del "Antes" (Opaca/Línea de base)
+                'rgba(209, 180, 153, 0.8)'   // Barra del "Después" (Dorado Atlas destacado)
+            ],
+            borderColor: [
+                'rgba(255, 255, 255, 0.3)',
+                '#d1b499'
+            ],
             borderWidth: 2,
+            barThickness: 45 // Barras más estilizadas y gruesas para diferenciar del Card 1
         }
     ]
 };
@@ -353,7 +361,7 @@ export const Home = () => {
                                 Departamento de lenguas extranjeras (miembros de los siguientes idiomas: Japonés, Inglés, Francés, Inglés) <br />
                             </h2>
                             <p className="body-text">
-                                La Facultad de Lenguas representa el espacio más interesante para observar el impacto de la IA generativa.
+                                El departamento de Lenguas extranjeras representó un espacio muy interesante para observar el impacto de la IA generativa.
                                 Desde la traducción contextual hasta la redacción automatizada, es aquí donde la IA altera profundamente
                                 la producción textual y la honestidad académica.
                             </p>
@@ -418,34 +426,39 @@ export const Home = () => {
                         </div>
 
                         <div className="atlas-grid-layout atlas-grid-docentes">
+                            {/* PRIMER DIV: Métricas Descriptivas Resumidas */}
                             <div className="atlas-col-stats">
                                 <div className="atlas-card-unique atlas-glass-basic">
                                     <h3 className="atlas-card-title">Resultados Globales</h3>
                                     <div className="atlas-analysis-text">
-                                        <p><strong>Media:</strong> 56.4%</p>
-                                        <p><strong>Mediana:</strong> 58.2%</p>
-                                        <p><strong>Moda:</strong> 3.75 pts</p>
-                                        <p><strong>Desviación Estándar:</strong> 14.2%</p>
+                                        <p className="atlas-p">
+                                            El diagnóstico registra una media global del <strong>56.4%</strong> y una desviación estándar del <strong>14.2%</strong>. Estos datos confirman un ecosistema con asimetrías importantes en los niveles de adopción entre las distintas áreas de la facultad.
+                                        </p>
                                     </div>
-                                    <div className="atlas-insight-box">
+                                    <div className="atlas-insight-box" style={{ marginTop: '15px' }}>
                                         <h4 className="atlas-gold-sub">Estado Actual</h4>
-                                        <p className="atlas-p">Fase de <strong>Uso Incipiente</strong>: existe intención pedagógica pero sin arquitectura institucional consolidada.</p>
+                                        <p className="atlas-p">
+                                            Fase de <strong>Uso Incipiente</strong>: existe una sólida intención pedagógica y destreza técnica empírica (moda de 3.75), pero el entorno aún carece de una arquitectura institucional homogénea.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
 
+                            {/* SEGUNDO DIV: Análisis Principal de la Línea de Base */}
                             <div className="atlas-col-main">
                                 <div className="atlas-card-unique atlas-glass-premium">
-                                    <h3 className="atlas-card-title">Validación Tecnológica y Curva de Adopción</h3>
+                                    <h3 className="atlas-card-title">Comportamiento de la Línea de Base</h3>
                                     <p className="atlas-p">
-                                        El ecosistema inició con una fase de diagnóstico orientada a medir la fricción tecnológica y las expectativas del grupo focal. A partir de esa línea de base, la plataforma evolucionó de manera iterativa hasta consolidar una sólida calificación promedio de <strong>56.4%</strong> en la experiencia de usuario.
+                                        El punto de partida de la facultad estuvo marcado por una exploración intuitiva y atomizada. Predominaba un uso de la IA enfocado en resolver tareas operativas y funcionales rápidas (como la corrección gramatical y la traducción contextual de textos), orientándose a la optimización de productos entregables más que al andamiaje de procesos cognitivos profundos.
                                     </p>
                                     <p className="atlas-p" style={{ marginTop: '15px' }}>
-                                        Este avance demuestra que la infraestructura logró mitigar la resistencia técnica inicial, transformándose en un entorno intuitivo apto para el <strong>despliegue de políticas institucionales</strong> y auditorías en tiempo real.
+                                        Esta dinámica inicial generó una alta dispersión metodológica. El análisis estratégico demuestra que el núcleo del cuerpo docente ya ha consolidado un nivel táctico e individual por cuenta propia; por lo tanto, el reto identificado en esta fase no radica en la falta de interés del docente, sino en la necesidad urgente de mecanismos institucionales que transformen la adopción improvisada en un criterio pedagógico guiado, unificado y protegido.
                                     </p>
                                 </div>
                             </div>
                         </div>
+
+
 
                         {/* Perfiles */}
                         <div className="atlas-profiles-row">
@@ -459,12 +472,14 @@ export const Home = () => {
                             </div>
                             <div className="atlas-profile-mini atlas-glass-basic">
                                 <h4 className="atlas-red-sub">Docente 3 • Ethical Resistance</h4>
-                                <p className="atlas-p-small">Representa el miedo institucional a la pérdida de habilidades básicas.</p>
+                                <p className="atlas-p-small">Manifiesta miedo institucional a la pérdida de habilidades básicas.</p>
                             </div>
                         </div>
                     </div>
 
-                    {/* 2. MESA DIRECTIVA */}
+                    {/* ==========================================
+    SECCIÓN 2: MESA DIRECTIVA Y ESTRATEGIA
+    ========================================== */}
                     <div id="atlas-block-directiva" className="atlas-audit-block">
                         <div className="atlas-section-header atlas-text-right">
                             <span className="atlas-gold-tag">FASE 1: AUDITAR - MESA DIRECTIVA</span>
@@ -472,41 +487,52 @@ export const Home = () => {
                         </div>
 
                         <div className="atlas-grid-layout atlas-grid-directiva">
+                            {/* LADO DE LA GRÁFICA (ROBUSTECIDO) */}
                             <div className="atlas-col-chart">
                                 <div className="atlas-card-unique atlas-glass-strong">
                                     <div className="atlas-chart-container">
                                         <Bar data={directivosChartData} options={chartOptions} />
                                     </div>
                                     <p className="atlas-p" style={{ marginTop: '20px' }}>
-                                        La auditoría revela una <strong>Desconexión Normativa</strong>. Mientras la visión estratégica existe, la capacidad operativa para monitorear riesgos es extremadamente baja.
+                                        La fase inicial de auditoría a directivos revela una <strong>Desconexión Normativa</strong> sistémica. Aunque existe una clara intención estratégica en el despliegue del software, los datos demuestran la necesidad urgente de robustecer al equipo directivo en competencias operativas clave.
+                                    </p>
+                                    <p className="atlas-p" style={{ marginTop: '12px' }}>
+                                        Se detectaron oportunidades críticas de desarrollo institucional en términos de: <strong>Políticas institucionales</strong> estandarizadas, marcos de <strong>Ética y privacidad</strong> de datos, herramientas de <strong>Seguimiento pedagógico</strong> y protocolos formales para la mitigación de <strong>Riesgos algorítmicos</strong>. Sin estos pilares, la capacidad de supervisar y regular el uso de herramientas generativas en las facultades permanece inactiva.
                                     </p>
                                 </div>
                             </div>
 
+                            {/* LADO DE LAS MÉTRICAS ESTADÍSTICAS */}
                             <div className="atlas-col-results">
                                 <div className="atlas-card-unique atlas-glass-basic">
                                     <h3 className="atlas-card-title">Resultados Directivos</h3>
                                     <div className="atlas-analysis-text">
-                                        <p><strong>Media:</strong> 35.7%</p>
-                                        <p><strong>Mediana:</strong> 34%</p>
-                                        <p><strong>Desviación:</strong> 8.7%</p>
+                                        <p><strong>Media de Cumplimiento:</strong> 35.7%</p>
+                                        <p><strong>Mediana:</strong> 34.0%</p>
+                                        <p><strong>Desviación Estándar:</strong> 8.7%</p>
                                     </div>
-                                    <div className="atlas-verdict-box">
-                                        <h4 className="atlas-red-sub">Veredicto</h4>
-                                        <p className="atlas-p-small">Intención Estratégica sin Capacidad Operativa.</p>
+                                    <div className="atlas-verdict-box" style={{ marginTop: '25px' }}>
+                                        <h4 className="atlas-red-sub">Veredicto COMPASS</h4>
+                                        <p className="atlas-p-small">
+                                            <strong>Intención Estratégica sin Capacidad Operativa:</strong> La mesa directiva tiene la voluntad de guiar el cambio cultural, pero carece de la infraestructura metodológica para auditar los sesgos y consolidar la transparencia algorítmica.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* GAP NUMBER */}
-                        <div className="atlas-card-unique atlas-gap-card">
+                        {/* GAP NUMBER (Aterrizado y sincronizado matemáticamente) */}
+                        <div className="atlas-card-unique atlas-gap-card" style={{ marginTop: '30px' }}>
                             <h2 className="atlas-main-title">LA BRECHA CRÍTICA</h2>
-                            <div className="atlas-giant-number">20.7</div>
-                            <p className="atlas-p">Puntos de diferencia entre la innovación docente (58%) y la capacidad institucional de regulación (35%).</p>
+                            <div className="atlas-giant-number">20.7%</div>
+                            <p className="atlas-p">
+                                Puntos de asincronía métrica entre el nivel de <strong>Innovación Docente Práctica (56.4%)</strong> y la <strong>Capacidad de Regulación Institucional (35.7%)</strong>.
+                            </p>
+                            <p className="atlas-p-small" style={{ marginTop: '10px', opacity: 0.85, fontStyle: 'italic' }}>
+                                *Nota Metodológica ATLAS: Una brecha superior a 15 puntos porcentuales indica un escenario de riesgo reputacional y operativo. Los profesores están integrando herramientas generativas en el aula a un ritmo que la estructura de gobernanza actual no alcanza a normar ni proteger.
+                            </p>
                         </div>
                     </div>
-
                     {/* 3. HEATMAP */}
                     <div id="atlas-block-heatmap" className="atlas-audit-block">
                         <h2 className="atlas-main-title"><i className="fas fa-fire"></i> Mapa de Riesgo Institucional</h2>
@@ -538,9 +564,9 @@ export const Home = () => {
                             <div className="atlas-card-unique atlas-glass-basic">
                                 <h3 className="atlas-card-title">Hallazgos Transversales</h3>
                                 <ul className="atlas-list">
-                                    <li>La facultad superó el desconocimiento tecnológica, pero no alcanza la seguridad operativa.</li>
-                                    <li>Existe un <strong>"agujero negro" institucional</strong>: Sin monitoreo de sesgos ni transparencia algorítmica.</li>
-                                    <li>El cuerpo docente tiene madurez técnica, pero carece de validación normativa.</li>
+                                    <li>Los participantes del piloto evidencian haber generado mayor conciencia en el uso estratégico de IA, pero gran vacío en términos de seguridad operativa.</li>
+                                    <li>Se revela un <strong>"agujero negro" institucional</strong> actualmente al no haber un monitoreo de sesgos o transparencia algorítmica en el uso de IA por parte de los equipos docentes.</li>
+                                    <li>El cuerpo docente participante cuenta con madurez técnica y tecnológica, pero manifiesta validación normativa.</li>
                                 </ul>
                             </div>
                             <div className="atlas-card-unique atlas-glass-basic">
@@ -562,10 +588,10 @@ export const Home = () => {
                         <div className="atlas-final-verdict atlas-glass-strong">
                             <h2 className="atlas-main-title">Veredicto Estratégico Global</h2>
                             <p className="atlas-p-large">
-                                La Facultad de Lenguas no enfrenta un problema tecnológico, sino una <strong>desarticulación sistémica</strong> entre innovación y supervisión. La brecha de 20.7 puntos representa actualmente el mayor riesgo reputacional de la institución.
+                                Los docentes y directivos participantes del piloto en el departamento de lenguas extranjeras no parecen enfrentar un problema tecnológico, sino una <strong>desarticulación sistémica</strong> entre innovación y supervisión. La brecha de 20.7 puntos representa actualmente el mayor riesgo reputacional de la institución.
                             </p>
                             <p className="atlas-p-large atlas-gold-sub" style={{ marginTop: '20px', fontWeight: 'bold' }}>
-                                EL SIGUIENTE PASO: Iniciar la fase de LEGISLAR. Crear un Comité de Gobernanza IA y protocolos de supervisión humana significativa.
+                                EL SIGUIENTE PASO:  Activar protocolos de madurez de IA Responsable con una implementación sistémica y robusta de COMPASS. Asimismo, se sugiere crear un Comité de Gobernanza de IA y construir protocolos de supervisión humana significativa.
                             </p>
                         </div>
                     </div>
@@ -611,24 +637,22 @@ export const Home = () => {
                             <table className="atlas-data-table">
                                 <thead>
                                     <tr>
-                                        <th>Teacher Key</th>
-                                        <th>Nombre Completo</th>
                                         <th>Rol</th>
                                         <th>Huella IA</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr><td>DIANA</td><td>Diana Katherine Salazar R.</td><td><span className="badge-docente">DOCENTE</span></td><td>93.52</td></tr>
-                                    <tr><td>RYOKO</td><td>Ryoko Kawakami</td><td><span className="badge-docente">DOCENTE</span></td><td>88.04</td></tr>
-                                    <tr><td>HEBELYHN</td><td>Hebelyn Eliana Caro A.</td><td><span className="badge-docente">DOCENTE</span></td><td>86.96</td></tr>
-                                    <tr><td>CLEVIA</td><td>Clevia Pérez Medina</td><td><span className="badge-docente">DOCENTE</span></td><td>83.01</td></tr>
-                                    <tr><td>MARCELA</td><td>Marcela Vargas</td><td><span className="badge-docente">DOCENTE</span></td><td>82.56</td></tr>
-                                    <tr><td>KAREN</td><td>Heydi Karen Neiva M.</td><td><span className="badge-docente">DOCENTE</span></td><td>81.39</td></tr>
-                                    <tr><td>LAURA</td><td>Laura Hurtado</td><td><span className="badge-docente">DOCENTE</span></td><td>79.29</td></tr>
-                                    <tr><td>ROBIN</td><td>Robin Davies</td><td><span className="badge-directivo">DIRECTIVO</span></td><td>85.76</td></tr>
-                                    <tr><td>CHLOE</td><td>Chloé Dupuis</td><td><span className="badge-directivo">DIRECTIVO</span></td><td>83.84</td></tr>
-                                    <tr><td>KELLEY</td><td>Kelley Crites</td><td><span className="badge-directivo">DIRECTIVO</span></td><td>89.32</td></tr>
-                                    <tr><td>ANDREA</td><td>Andrea Ramírez E.</td><td><span className="badge-directivo">DIRECTIVO</span></td><td>88.24</td></tr>
+                                    <tr><td><span className="badge-docente">DOCENTE</span></td><td>93.52</td></tr>
+                                    <tr><td><span className="badge-docente">DOCENTE</span></td><td>88.04</td></tr>
+                                    <tr><td><span className="badge-docente">DOCENTE</span></td><td>86.96</td></tr>
+                                    <tr><td><span className="badge-docente">DOCENTE</span></td><td>83.01</td></tr>
+                                    <tr><td><span className="badge-docente">DOCENTE</span></td><td>82.56</td></tr>
+                                    <tr><td><span className="badge-docente">DOCENTE</span></td><td>81.39</td></tr>
+                                    <tr><td><span className="badge-docente">DOCENTE</span></td><td>79.29</td></tr>
+                                    <tr><td><span className="badge-directivo">DIRECTIVO</span></td><td>85.76</td></tr>
+                                    <tr><td><span className="badge-directivo">DIRECTIVO</span></td><td>83.84</td></tr>
+                                    <tr><td><span className="badge-directivo">DIRECTIVO</span></td><td>89.32</td></tr>
+                                    <tr><td><span className="badge-directivo">DIRECTIVO</span></td><td>88.24</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -664,7 +688,7 @@ export const Home = () => {
                         <div className="card-icon">📈</div>
                         <h3>Transición de Madurez en Aula (Docentes)</h3>
                         <p className="atlas-p">
-                            Los datos duros confirman una migración cualitativa desde la ejecución empírica hacia la práctica planificada. El 100% de la planta docente superó la fase informal. El grueso del cuerpo docente se estabilizó de manera consistente en el <strong>Nivel 3: Docente Estratégico</strong> (promedios de 3.71 a 4.17), mientras que perfiles líderes alcanzaron el <strong>Nivel 4: Referente Institucional</strong>.
+                            Los datos duros confirman una migración cualitativa desde la ejecución empírica hacia la práctica planificada. El 100% de la planta docente superó la fase informal. El  cuerpo docente se estabilizó de manera consistente en el <strong>Nivel 3: Docente Estratégico</strong> (promedios de 3.71 a 4.17), mientras que perfiles líderes alcanzaron el <strong>Nivel 4: Referente Institucional</strong>.
                         </p>
                         <div style={{ height: "220px", marginTop: "20px" }}>
                             {/* Gráfica de los Promedios Globales Docentes ajustando el eje Y al máximo de 5 */}
