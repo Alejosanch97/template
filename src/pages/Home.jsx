@@ -126,7 +126,7 @@ const madurezData = {
         {
             label: 'Uso Responsable de IA',
             // Promedio inicial (3.27) vs Promedio final tras el piloto (4.36)
-            data: [3.27, 4.36], 
+            data: [3.27, 4.36],
             backgroundColor: [
                 'rgba(255, 255, 255, 0.1)',  // Barra del "Antes" (Opaca/Línea de base)
                 'rgba(209, 180, 153, 0.8)'   // Barra del "Después" (Dorado Atlas destacado)
@@ -139,6 +139,79 @@ const madurezData = {
             barThickness: 45 // Barras más estilizadas y gruesas para diferenciar del Card 1
         }
     ]
+};
+
+// Gráfica 1: Incremento de Competencias Críticas (Antes vs Después)
+const comparativaPilotoData = {
+    labels: [
+        'Marcos Internacionales',
+        'Uso Responsable de IA en el Aula'
+    ],
+    datasets: [
+        {
+            label: 'Antes del Piloto',
+            data: [2.18, 3.27], // Medias exactas calculadas de tus datos
+            backgroundColor: 'rgba(255, 255, 255, 0.15)',
+            borderColor: 'rgba(255, 255, 255, 0.4)',
+            borderWidth: 2,
+        },
+        {
+            label: 'Después del Piloto',
+            data: [3.91, 4.36], // Saltos cualitativos reales
+            backgroundColor: 'rgba(209, 180, 153, 0.8)', // Dorado Atlas
+            borderColor: '#d1b499',
+            borderWidth: 2,
+        }
+    ]
+};
+
+// Gráfica 2: Radar de Dimensiones de Madurez Final (Promedios Reales)
+// Nota: Si usas gráfico tipo Radar, recuerda importar Radar de react-chartjs-2 y registrarlo.
+// Si prefieres mantener la simplicidad, puedes renderizarlo como Bar. Usaremos Bar con opciones estilizadas.
+const dimensionesMadurezData = {
+    labels: ['Agencia Humana', 'Privacidad de Datos', 'Uso Ético', 'Supervisión y Validación'],
+    datasets: [
+        {
+            label: 'Nivel Consolidado',
+            data: [4.09, 4.27, 4.27, 4.00], // Promedios de las respuestas (Escala 1-5)
+            backgroundColor: 'rgba(209, 180, 153, 0.4)',
+            borderColor: '#d1b499',
+            borderWidth: 2,
+            barThickness: 30
+        }
+    ]
+};
+
+// Gráfica 3: Indicadores de Retorno y Validación de la Plataforma
+const valorPercibidoData = {
+    labels: ['Experiencia de Usuario (UX)', 'Utilidad Profesional', 'Índice de Recomendación'],
+    datasets: [
+        {
+            label: 'Calificación (Sobre 5.0)',
+            data: [4.27, 4.18, 4.45], // Datos exactos del formulario
+            backgroundColor: [
+                'rgba(255, 255, 255, 0.2)',
+                'rgba(255, 255, 255, 0.3)',
+                'rgba(209, 180, 153, 0.9)'
+            ],
+            borderColor: ['rgba(255, 255, 255, 0.5)', 'rgba(255, 255, 255, 0.5)', '#d1b499'],
+            borderWidth: 2,
+            barThickness: 40
+        }
+    ]
+};
+
+// Opciones compartidas para mantener las gráficas estilizadas dentro del dashboard
+const opcionesEjesCinco = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+        legend: { labels: { color: '#fff', font: { family: 'sans-serif' } } }
+    },
+    scales: {
+        x: { ticks: { color: 'rgba(255, 255, 255, 0.7)' }, grid: { display: false } },
+        y: { min: 0, max: 5, ticks: { color: 'rgba(255, 255, 255, 0.5)', stepSize: 1 }, grid: { color: 'rgba(255, 255, 255, 0.05)' } }
+    }
 };
 
 
@@ -782,6 +855,119 @@ export const Home = () => {
             {/* ==========================================
     SECCIÓN 4: VIABILIDAD INSTITUCIONAL Y MEJORA CONTINUA
     ========================================== */}
+            {/* ==========================================
+    SECCIÓN 4: RESULTADOS DEL PILOTO E IMPACTO INSTITUCIONAL
+    ========================================== */}
+            <section id="atlas-block-resultados" className="atlas-audit-block" style={{ marginTop: '60px' }}>
+                <div className="atlas-section-header">
+                    <span className="atlas-gold-tag">FASE 4: SOSTENER - ANALÍTICA DE IMPACTO</span>
+                    <h2 className="atlas-main-title">Resultados Consolidados del Piloto (N=11)</h2>
+                    <p className="atlas-p-subtitle" style={{ color: '#aaa', marginTop: '5px' }}>
+                        Evidencia cuantitativa y cualitativa del cambio cultural y la adopción de COMPASS.
+                    </p>
+                </div>
+
+                {/* METRICAS HIGHLIGHTS (TARJETAS GRANDES DE IMPACTO) */}
+                <div className="atlas-grid-layout" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px', marginBottom: '40px' }}>
+                    <div className="atlas-card-unique atlas-glass-basic" style={{ textAlign: 'center', padding: '25px' }}>
+                        <h4 style={{ color: '#d1b499', fontSize: '0.9rem', uppercase: 'true' }}>Conocimiento Regulatorio</h4>
+                        <div style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: '10px 0', color: '#fff' }}>+79%</div>
+                        <p className="atlas-p-small" style={{ opacity: 0.8 }}>Incremento brutal en la comprensión de los marcos UNESCO, UE y OCDE.</p>
+                    </div>
+                    <div className="atlas-card-unique atlas-glass-basic" style={{ textAlign: 'center', padding: '25px' }}>
+                        <h4 style={{ color: '#d1b499', fontSize: '0.9rem', uppercase: 'true' }}>Uso Responsable IA</h4>
+                        <div style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: '10px 0', color: '#fff' }}>+33%</div>
+                        <p className="atlas-p-small" style={{ opacity: 0.8 }}>Evolución del uso intuitivo y exploratorio hacia un nivel estratégico planeado.</p>
+                    </div>
+                    <div className="atlas-card-unique atlas-glass-basic" style={{ textAlign: 'center', padding: '25px' }}>
+                        <h4 style={{ color: '#d1b499', fontSize: '0.9rem', uppercase: 'true' }}>Recomendación del Modelo</h4>
+                        <div style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: '10px 0', color: '#fff' }}>4.45 <span style={{ fontSize: '1.2rem', color: '#888' }}>/ 5</span></div>
+                        <p className="atlas-p-small" style={{ opacity: 0.8 }}>Validación de valor y tracción sobresaliente dentro del grupo focal docente.</p>
+                    </div>
+                    <div className="atlas-card-unique atlas-glass-basic" style={{ textAlign: 'center', padding: '25px' }}>
+                        <h4 style={{ color: '#d1b499', fontSize: '0.9rem', uppercase: 'true' }}>Experiencia de Usuario</h4>
+                        <div style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: '10px 0', color: '#fff' }}>4.27 <span style={{ fontSize: '1.2rem', color: '#888' }}>/ 5</span></div>
+                        <p className="atlas-p-small" style={{ opacity: 0.8 }}>Sólida usabilidad de la infraestructura EdTech para despliegues a escala.</p>
+                    </div>
+                </div>
+
+                {/* BLOQUE DE GRÁFICAS PRINCIPALES */}
+                <div className="atlas-grid-layout atlas-grid-docentes" style={{ marginBottom: '40px' }}>
+                    {/* GRÁFICA 1: EVOLUCIÓN */}
+                    <div className="atlas-col-stats">
+                        <div className="atlas-card-unique atlas-glass-strong">
+                            <h3 className="atlas-card-title">Hito Evolutivo: De Herramienta a Criterio</h3>
+                            <div style={{ height: '240px', marginTop: '15px' }}>
+                                <Bar data={comparativaPilotoData} options={opcionesEjesCinco} />
+                            </div>
+                            <p className="atlas-p-small" style={{ marginTop: '15px', opacity: 0.9 }}>
+                                Los datos demuestran que COMPASS no enseña "prompts", desarrolla <strong>alfabetización institucional y regulatoria</strong>. El salto de <strong>2.18 a 3.91</strong> en el dominio de marcos internacionales comprueba que el profesorado adquirió la base jurídica indispensable para auditar su propia práctica pedagógica.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* GRÁFICA 2: DIMENSIONES DE MADUREZ */}
+                    <div className="atlas-col-main">
+                        <div className="atlas-card-unique atlas-glass-premium">
+                            <h3 className="atlas-card-title">Consolidación de Dimensiones Críticas</h3>
+                            <div style={{ height: '240px', marginTop: '15px' }}>
+                                <Bar data={dimensionesMadurezData} options={{ ...opcionesEjesCinco, plugins: { legend: { display: false } } }} />
+                            </div>
+                            <p className="atlas-p-small" style={{ marginTop: '15px', opacity: 0.9 }}>
+                                El ecosistema del profesorado se estabilizó de manera madura por encima de la barrera de los 4.0 puntos. Destacan las dimensiones de <strong>Privacidad de Datos (4.27)</strong> y <strong>Uso Ético (4.27)</strong>, evidenciando un cambio profundo en cómo el docente <em>piensa</em> y estructura sus dinámicas académicas de forma segura.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* BLOQUE INFERIOR: VALIDACIÓN DE PRODUCTO Y EVIDENCIA CUALITATIVA */}
+                <div className="atlas-grid-layout atlas-grid-directiva" style={{ gap: '20px' }}>
+                    {/* GRÁFICA VALOR PERCIBIDO */}
+                    <div className="atlas-col-chart">
+                        <div className="atlas-card-unique atlas-glass-strong">
+                            <h3 className="atlas-card-title">Validación del Modelo EdTech</h3>
+                            <div style={{ height: '230px', marginTop: '15px' }}>
+                                <Bar data={valorPercibidoData} options={{ ...opcionesEjesCinco, plugins: { legend: { display: false } } }} />
+                            </div>
+                            <div className="atlas-insight-box" style={{ marginTop: '15px' }}>
+                                <h4 className="atlas-gold-sub">Insight Diferenciador</h4>
+                                <p className="atlas-p-small">
+                                    Los resultados no reflejan la satisfacción de un "curso convencional de IA". El piloto valida un <strong>cambio cultural inicial y escalable</strong>. La alta utilidad profesional (4.18) y recomendación (4.45) garantizan la viabilidad de adopción del modelo en otras facultades de la universidad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* APRENDIZAJES DEL PILOTO (ALERTAS AMARILLAS QUE DAN CREDIBILIDAD) */}
+                    <div className="atlas-col-results">
+                        <div className="atlas-card-unique atlas-glass-basic" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                            <div>
+                                <h3 className="atlas-card-title">Aprendizajes Críticos del Piloto</h3>
+                                <p className="atlas-p-small" style={{ marginBottom: '15px' }}>
+                                    Para blindar la transparencia institucional ante el comité, el modelo identifica las fricciones operativas declaradas por los usuarios:
+                                </p>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                    <p className="atlas-p-small">
+                                        ⚠️ <strong>Uso Intuitivo Previo:</strong> Antes del despliegue dominaba la exploración empírica, enfocada en optimizar productos rápidos (como corrección de textos) en lugar de procesos reflexivos.
+                                    </p>
+                                    <p className="atlas-p-small">
+                                        ⚠️ <strong>Saturación de Tiempos:</strong> El cuerpo docente señaló dificultades para completar actividades autogestionadas cuando se cruzaban con periodos de receso académico o alta carga evaluativa.
+                                    </p>
+                                    <p className="atlas-p-small">
+                                        ⚠️ <strong>Ventana de Trabajo Óptima:</strong> El <strong>63.6%</strong> de los participantes determinó que para consolidar con éxito estas competencias éticas y regulatorias, se requiere un acompañamiento institucional continuo estructurado entre <strong>4 a 6 meses</strong>.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="atlas-verdict-box" style={{ marginTop: '15px', background: 'rgba(209, 180, 153, 0.08)', borderColor: 'rgba(209, 180, 153, 0.3)' }}>
+                                <h4 style={{ color: '#d1b499', margin: 0, fontSize: '0.85rem' }}>Conclusión Estratégica</h4>
+                                <p className="atlas-p-small" style={{ fontStyle: 'italic', margin: '5px 0 0 0' }}>
+                                    "El hallazgo clave no fue tecnológico, sino institucional: la universidad necesita estructuras formales para transformar el uso intuitivo de la IA en un criterio ético compartido."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
 
