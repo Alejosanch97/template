@@ -431,7 +431,7 @@ export const Home = () => {
                         <div className="focus-text-main">
                             <span className="gold-text-tag">CASO DE ÉXITO: PILOTO COMPASS</span>
                             <h2 className="section-title font-heading italic">
-                                Departamento de lenguas extranjeras (miembros de los siguientes idiomas: Japonés, Inglés, Francés, Inglés) <br />
+                                Departamento de lenguas extranjeras (miembros de los siguientes idiomas: Japonés, Inglés, Francés) <br />
                             </h2>
                             <p className="body-text">
                                 El departamento de Lenguas extranjeras representó un espacio muy interesante para observar el impacto de la IA generativa.
